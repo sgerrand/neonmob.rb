@@ -1,0 +1,30 @@
+language: ruby
+dist: trusty
+rvm:
+  - 2.4.1
+  - 2.3.4
+  - 2.2.7
+  - 2.1
+  - 2.0
+  - jruby-9.1
+  - rbx-3
+  - ruby-head
+before_install:
+  - gem install echoe --no-doc
+  - rake build_gemspec
+  - "echo \"source 'https://rubygems.org';
+    group :development do;
+      gem 'echoe';
+      gem 'rake';
+    end;
+    gemspec\" > Gemfile"
+script:
+  - bundle exec rake test
+cache:
+  directories:
+    - $HOME/.rvm/gems
+    - $HOME/.rvm/rubies
+matrix:
+  allow_failures:
+  - rvm: ruby-head
+  fast_finish: true
