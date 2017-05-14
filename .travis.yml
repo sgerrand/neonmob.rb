@@ -6,11 +6,16 @@ rvm:
   - 2.2.7
   - ruby-head
 before_install:
-  - gem install echoe
-install:
-  - gem install http minitest
+  - gem install echoe --no-doc
+  - rake build_gemspec
+  - "echo \"source 'https://rubygems.org';
+    group :development do;
+      gem 'echoe';
+      gem 'rake';
+    end;
+    gemspec\" > Gemfile"
 script:
-  - rake test
+  - bundle exec rake test
 cache:
   directories:
     - $HOME/.rvm/gems

@@ -6,7 +6,7 @@ Echoe.new('neonmob') do |gem|
   gem.email = 'rubygems-neonmob@sgerrand.com'
   gem.url = 'https://github.com/sgerrand/neonmob.rb'
   gem.licenses = ['MIT']
-  gem.development_dependencies = ['minitest ~>0']
-  gem.runtime_dependencies = ['http ~>0']
+  gem.development_dependencies = ['minitest']
+  gem.runtime_dependencies = ['http']
   gem.ignore_pattern = []
 end
