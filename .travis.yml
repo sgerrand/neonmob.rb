@@ -11,3 +11,7 @@ install:
   - gem install http minitest
 script:
   - rake test
+cache:
+  directories:
+    - $HOME/.rvm/gems
+    - $HOME/.rvm/rubies
