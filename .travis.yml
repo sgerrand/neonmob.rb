@@ -1,0 +1,13 @@
+language: ruby
+dist: trusty
+rvm:
+  - 2.4.1
+  - 2.3.4
+  - 2.2.7
+  - ruby-head
+before_install:
+  - gem install echoe
+install:
+  - gem install http minitest
+script:
+  - rake test
