@@ -8,5 +8,6 @@ Echoe.new('neonmob') do |gem|
   gem.licenses = ['MIT']
   gem.development_dependencies = ['minitest']
   gem.runtime_dependencies = ['http']
+  gem.ruby_version = '>= 2.0'
   gem.ignore_pattern = []
 end
